@@ -1,3 +1,4 @@
 Hello world.
 This is a text file.
 And now we're gonna find out how this works.
+Now, how many lines show up?
