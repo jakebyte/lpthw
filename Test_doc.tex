@@ -1,4 +1,7 @@
 \documentclass{article}
+\usepackage{color}
+
+
 \begin{document}
 \title{Test Document}
 \author{Jake Besteman}
@@ -14,11 +17,25 @@ So this is a \LaTeX document. What does that mean?
 
 I typed it \today
 
-Can I edit it here?
+Can I \textsc{edit} it \textit{here}?
 
 \begin{itemize}
 \item This is one item.
 \item This is another.
 \end{itemize}
+{\color{red}FIRE}
 
+
+\begin{enumerate}
+\item First thing
+\item Second thing
+\begin{itemize}
+\item A sub-thing
+\item Another sub-thing
+\end{itemize}
+\item Third thing
+\end{enumerate}
+
+Item \#1A\textbackslash642 costs \$8 and is sold at a \~{}10\% profit.
+Item \#1A\textbackslash642 costs \$8 and is sold at a $\approx$10\% profit.
 \end{document}
