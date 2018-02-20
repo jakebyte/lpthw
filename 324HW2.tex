@@ -1,0 +1,44 @@
+\documentclass{report}
+\usepackage{bbold}
+
+\begin{document}
+ENEE 324 HW \#2 \\
+Jacob Besteman-Street \\
+\today \\
+
+I recently injured my wrist, which has made my already poor handwriting downright illegible.
+While it recovers, I'm using \LaTeX to write up homework assignments. If that is unacceptable, let me know.
+
+\begin{enumerate}
+\item A frog is trapped in a well.  In order to escape from the well the frog needs to climb up three steps.
+The frog can jump high enough for one step at a time.
+However, it needs to jump at a certain angle in order to land on the next step successfully.
+Each time it jumps it successfully jumps to the next step with probability \textit{q}.
+ Otherwise, it hits the vertical side of the stair and bounces back to where it was
+ with probability 1-\textit{q} and tries again starting from the same step.  Let \textit{X}
+ denote the number of jumps the frog makes before it escapes the well.
+
+\begin{itemize}
+\item[(a)] What is the probability mass function (PMF) of \textit{X}?\\ \newline
+The PMF of \textit{X} is \\
+\item[(b)] Compute E[\textit{X}]. \\ \newline
+\textit{X} is a Pascal RV, therefore its expected value $ E[X] = \frac{k}{p} $ where \textit{p} = \textit{q} and textit{k} is the number of successes needed, 3. Therefore: $$E[X] = \frac{3}{q}$$
+\item[(c)] Suppose that the frog escaped from the well after four jumps. Given this, what is the probabilitythat the first jump was successful, i.e., the frog moved on to the first step from the bottom afterthe first jump? \\ \newline
+There are 3 possible results that will get the frog out after 4 jumps: \\ \newline
+\begin{tabular}{c|cccc}
+Jump & 1 & 2 & 3 & 4\\
+\hline
+Result & Failure & Success & Success & Success \\
+ & Success & Failure & Succes & Success\\
+& Success & Success & Failure & Success \\
+\end{tabular} \\
+\newline
+ Each is equally likely. The first jump is successful for 2 of the 3 possibilities, therefore the probability that the first jump was a success is $$P(\{first {}jump{} success \}|X = 4) =  \frac{2}{3} $$.
+\end{itemize}
+\item Brad is looking out his window daydreaming. The number of people who pass by outside his window per hour is a Poisson random variable (rv) with 
+$\alpha = 24$. Let \textit{Y} be the number of people who pass by outside Brad’s window during the first hour.
+%\begin{itemize}
+
+ %\end{itemize}
+ \end{enumerate}
+ \end{document}
