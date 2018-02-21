@@ -1,0 +1,104 @@
+\documentclass{report}
+\usepackage{bbold}
+\usepackage{amsmath}
+%\usepackage{amssymb}
+
+\begin{document}
+ENEE 381 HW \#3 \\
+Jacob Besteman-Street \\
+\today \\
+I recently injured my wrist, which has made my already poor handwriting downright illegible.
+While it recovers, I'm using \LaTeX to write up homework assignments. If that is unacceptable, let me know.
+
+Thanks,
+
+Jake Besteman
+
+\begin{itemize}
+  \item \textbf{Problem 9.14:} Calculate the \textit{exact} reflection and transmission coeffecients, \textit{without}
+  assuming that $\mu_1 = \mu_2 = \mu_0$. Confirm that $R+T=1$. \\
+  \newline
+  \begin{equation}
+    \label{beta}
+    \beta = \frac{\mu_1v_1}{\mu_2v_2}
+  \end{equation}
+  \begin{equation}
+    E_{0R}= \frac{1-\beta}{1+\beta}E_{0I} \text{ and } E_{0T}= \frac{2}{1+\beta}E_{0I}
+  \end{equation}
+  \begin{equation}
+  I_I = \frac{\epsilon_1v_1}{2}|E_{0I}|^2 \text{ and }I_R = \frac{\epsilon_1v_1}{2}|E_{0R}|^2\text{ and }I_T = \frac{\epsilon_2v_2}{2}|E_{0T}|^2
+  \end{equation}
+Plugging the equations from (2) in for $E_{0R}$ and $E_{0T}$ in (3), we get:
+\begin{equation}
+R = \frac{I_R}{I_I}  = \frac{\frac{\epsilon_1v_1}{2}(\frac{1-\beta}{1+\beta})^2E_{0I}^2}{\frac{\epsilon_1v_1}{2}E_{0I}^2} = (\frac{1-\beta}{1+\beta})^2 = \frac{1-2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}}{1+2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}}
+\end{equation}
+and
+\begin{equation}
+T = \frac{I_T}{I_I}  = \frac{\frac{\epsilon_2v_2}{2}(\frac{2}{1+\beta})^2E_{0I}^2}{\frac{\epsilon_1v_1}{2}E_{0I}^2} = \frac{\epsilon_2v_2}{\epsilon_1v_1}(\frac{2}{1+\beta})^2 =\frac{\epsilon_2v_2}{\epsilon_1v_1} \frac{4}{1+2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}}
+\end{equation}
+Show that $R+T=1$:
+\begin{equation}
+  R+T=\frac{1-2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}+4\frac{\epsilon_2v_2}{\epsilon_1v_1}}{1+2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}}
+\end{equation}
+For that to equal 1, we must show that
+\begin{equation}
+  4\frac{\epsilon_2v_2}{\epsilon_1v_1}-2\frac{\mu_1v_1}{\mu_2v_2}=2\frac{\mu_1v_1}{\mu_2v_2} \text{ or that } \frac{\epsilon_2v_2}{\epsilon_1v_1}=\frac{\mu_1v_1}{\mu_2v_2}
+\end{equation}
+For that we need the equations for $v_1$ and $v_2$:
+\begin{equation}
+  v_1 = \frac{1}{\sqrt{\mu_1\epsilon_1}} \text{ and } v_2 = \frac{1}{\sqrt{\mu_2\epsilon_2}}
+\end{equation}
+Then rearrange Equation (7) into:
+\begin{equation}
+  \frac{\mu_2\epsilon_2}{\mu_1\epsilon_1} = \frac{v_1^2}{v_2^2}
+\end{equation}
+And substitute for $v_1$ and $v_2$ to get:
+\begin{equation}
+  \frac{\mu_2\epsilon_2}{\mu_1\epsilon_1} = \frac{\frac{1}{\sqrt{\mu_1\epsilon_1}}^2}{\frac{1}{\sqrt{\mu_2\epsilon_2}}^2} = \frac{\mu_2\epsilon_2}{\mu_1\epsilon_1}
+\end{equation}
+This proves the first version of Equation (7), which means we can substitute into Equation (6):
+\begin{equation}
+  R+T=\frac{1-2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}+4\frac{\epsilon_2v_2}{\epsilon_1v_1}}{1+2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}} = \frac{1+2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}}{1+2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}} = 1
+\end{equation}
+\item \textbf{Problem 9.15:} Prove that for a normal incident wave, the reflected and transmitted waves have the same polarization.\\ \newline
+At normal incidence, there is no component of the E or B field that is perpendicular to the boundary.
+It is all parallel. Therefore, we are only concerned with the parallel boundary conditions. Specifically:
+\begin{align}
+(\tilde{E}_{0I}+\tilde{E}_{0R})_{x,y} & = (\tilde{E}_{0T})_{x,y}\\
+\frac{1}{\mu_1}(\tilde{B}_{0I}+\tilde{B}_{0R})_{x,y} & = \frac{1}{\mu_1}(\tilde{B}_{0T})_{x,y}
+\end{align}
+Substituting $\tilde{B}=\frac{1}{v}\tilde{E}$ gives
+\begin{equation}
+  \frac{1}{\mu_1v_1}(\tilde{E}_{0I}+\tilde{E}_{0R})_{x,y}  = \frac{1}{\mu_1v_1}(\tilde{E}_{0T})_{x,y}
+\end{equation}
+If the polarization of the incident wave is strictly in the $\hat{x}$ direction, then the $x,y$ components of Equation (12) are:
+\begin{equation}
+\tilde{E}_{0I}+\tilde{E}_{0R}\cos{\theta_R} = \tilde{E}_{0T}\cos{\theta_T}
+\end{equation}
+\begin{equation}
+  \tilde{E}_{0R}\sin{\theta_R} = \tilde{E}_{0T}\sin{\theta_T}
+\end{equation}
+Likewise, the $x,y$ components of Equation (14) are, respectively:
+\begin{equation}
+\frac{1}{\mu_1v_1}\tilde{E}_{0I}+\frac{1}{\mu_1v_1}\tilde{E}_{0R}\cos{\theta_R} = \frac{1}{\mu_1v_1}\tilde{E}_{0T}\cos{\theta_T}
+\end{equation}
+\begin{equation}
+   \frac{1}{\mu_1v_1}\tilde{E}_{0R}\sin{\theta_R} = \frac{1}{\mu_1v_1}\tilde{E}_{0T}\sin{\theta_T}
+\end{equation}
+
+We will consider just the $y$ components:
+\begin{align}
+    \tilde{E}_{0R}\sin{\theta_R} & = \tilde{E}_{0T}\sin{\theta_T} \\
+    \frac{\tilde{E}_{0R}}{\mu_1v_1}\sin{\theta_R} & = \frac{\tilde{E}_{0T}}{\mu_1v_1}\sin{\theta_T}
+\end{align}
+
+There are only two circumstances under which both Equation (19) and (20) can be true: \\
+Either $\mu_1v_1 = \mu_2v_2$, in which case both sides of the boundary are electromagnetically identical and there \textit{is no} boundary,\\
+or $sin{\theta_R} = sin{\theta_T} = 0$ which means that $\theta_R = \theta_T = 0$.
+
+
+
+
+
+  \end{itemize}
+   \end{document}
