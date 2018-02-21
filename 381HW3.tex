@@ -15,7 +15,7 @@ Thanks,
 Jake Besteman
 
 \begin{itemize}
-  \item \textbf{Problem 9.14:} Calculate the \textit{exact} reflection and transmission coeffecients, \textit{without}
+  \item[1)] \textbf{Problem 9.14:} Calculate the \textit{exact} reflection and transmission coeffecients, \textit{without}
   assuming that $\mu_1 = \mu_2 = \mu_0$. Confirm that $R+T=1$. \\
   \newline
   \begin{equation}
@@ -60,16 +60,16 @@ This proves the first version of Equation (7), which means we can substitute int
 \begin{equation}
   R+T=\frac{1-2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}+4\frac{\epsilon_2v_2}{\epsilon_1v_1}}{1+2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}} = \frac{1+2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}}{1+2\frac{\mu_1v_1}{\mu_2v_2}+\frac{\mu_1^2v_1^2}{\mu_2^2v_2^2}} = 1
 \end{equation}
-\item \textbf{Problem 9.15:} Prove that for a normal incident wave, the reflected and transmitted waves have the same polarization.\\ \newline
+\item[2)] \textbf{Problem 9.15:} Prove that for a normal incident wave, the reflected and transmitted waves have the same polarization.\\ \newline
 At normal incidence, there is no component of the E or B field that is perpendicular to the boundary.
 It is all parallel. Therefore, we are only concerned with the parallel boundary conditions. Specifically:
 \begin{align}
 (\tilde{E}_{0I}+\tilde{E}_{0R})_{x,y} & = (\tilde{E}_{0T})_{x,y}\\
-\frac{1}{\mu_1}(\tilde{B}_{0I}+\tilde{B}_{0R})_{x,y} & = \frac{1}{\mu_1}(\tilde{B}_{0T})_{x,y}
+\frac{1}{\mu_1}(\tilde{B}_{0I}+\tilde{B}_{0R})_{x,y} & = \frac{1}{\mu_2}(\tilde{B}_{0T})_{x,y}
 \end{align}
 Substituting $\tilde{B}=\frac{1}{v}\tilde{E}$ gives
 \begin{equation}
-  \frac{1}{\mu_1v_1}(\tilde{E}_{0I}+\tilde{E}_{0R})_{x,y}  = \frac{1}{\mu_1v_1}(\tilde{E}_{0T})_{x,y}
+  \frac{1}{\mu_1v_1}(\tilde{E}_{0I}+\tilde{E}_{0R})_{x,y}  = \frac{1}{\mu_2v_2}(\tilde{E}_{0T})_{x,y}
 \end{equation}
 If the polarization of the incident wave is strictly in the $\hat{x}$ direction, then the $x,y$ components of Equation (12) are:
 \begin{equation}
@@ -80,22 +80,42 @@ If the polarization of the incident wave is strictly in the $\hat{x}$ direction,
 \end{equation}
 Likewise, the $x,y$ components of Equation (14) are, respectively:
 \begin{equation}
-\frac{1}{\mu_1v_1}\tilde{E}_{0I}+\frac{1}{\mu_1v_1}\tilde{E}_{0R}\cos{\theta_R} = \frac{1}{\mu_1v_1}\tilde{E}_{0T}\cos{\theta_T}
+\frac{1}{\mu_1v_1}\tilde{E}_{0I}+\frac{1}{\mu_1v_1}\tilde{E}_{0R}\cos{\theta_R} = \frac{1}{\mu_2v_2}\tilde{E}_{0T}\cos{\theta_T}
 \end{equation}
 \begin{equation}
-   \frac{1}{\mu_1v_1}\tilde{E}_{0R}\sin{\theta_R} = \frac{1}{\mu_1v_1}\tilde{E}_{0T}\sin{\theta_T}
+   \frac{1}{\mu_1v_1}\tilde{E}_{0R}\sin{\theta_R} = \frac{1}{\mu_2v_2}\tilde{E}_{0T}\sin{\theta_T}
 \end{equation}
 
 We will consider just the $y$ components:
 \begin{align}
     \tilde{E}_{0R}\sin{\theta_R} & = \tilde{E}_{0T}\sin{\theta_T} \\
-    \frac{\tilde{E}_{0R}}{\mu_1v_1}\sin{\theta_R} & = \frac{\tilde{E}_{0T}}{\mu_1v_1}\sin{\theta_T}
+    \frac{\tilde{E}_{0R}}{\mu_1v_1}\sin{\theta_R} & = \frac{\tilde{E}_{0T}}{\mu_2v_2}\sin{\theta_T}
 \end{align}
 
 There are only two circumstances under which both Equation (19) and (20) can be true: \\
 Either $\mu_1v_1 = \mu_2v_2$, in which case both sides of the boundary are electromagnetically identical and there \textit{is no} boundary,\\
 or $sin{\theta_R} = sin{\theta_T} = 0$ which means that $\theta_R = \theta_T = 0$.
-
+\item[3)] \textbf{Problem 9.18:} Did this one by hand, don't yet know how to do graphs in \LaTeX. It's not pretty.
+\item[4)] Derive the Fresnel coefficients for an incident wave polarized in the $y$ direction, perpendicular to the incident plane.\\ \newline
+Since \~{E} is in the $y$ direction, then \~{B} will be in the incident plane $(x,z)$. Therefore there are three boundary conditions to deal with:
+\begin{align}
+  (\tilde{E}_{0I}+\tilde{E}_{0R})_{y} & = (\tilde{E}_{0T})_{y}\\
+  (\tilde{B}_{0I}+\tilde{B}_{0R})_{z} & = (\tilde{B}_{0T})_{z}\\
+  \frac{1}{\mu_1}(\tilde{B}_{0I}+\tilde{B}_{0R})_{x} & = \frac{1}{\mu_2}(\tilde{B}_{0T})_{x}
+\end{align}
+Which can be expanded or rearranged into:
+\begin{align}
+  E_{0I}+E_{0R} & = E_{0T}\\
+  (B_{0I}-B_{0R})\cos{\theta_I} & = B_{0T}\cos{\theta_t}
+\end{align}
+The latter of which can be rewritten as
+\begin{equation}
+  \frac{1}{v_1} (E_{0I}-E_{0R})\cos{\theta_I}  = \frac{1}{v_2} E_{0T}\cos{\theta_t}
+\end{equation}
+Since $n=\frac{c}{v}$ we can rewrite that as
+\begin{equation}
+  n_1(E_{0I}-E_{0R})\cos{\theta_I}  = n_2 E_{0T}\cos{\theta_t}
+\end{equation}
 
 
 
