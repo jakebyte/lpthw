@@ -95,8 +95,9 @@ We will consider just the $y$ components:
 There are only two circumstances under which both Equation (19) and (20) can be true: \\
 Either $\mu_1v_1 = \mu_2v_2$, in which case both sides of the boundary are electromagnetically identical and there \textit{is no} boundary,\\
 or $sin{\theta_R} = sin{\theta_T} = 0$ which means that $\theta_R = \theta_T = 0$.
-\item[3)] \textbf{Problem 9.18:} Did this one by hand, don't yet know how to do graphs in \LaTeX. It's not pretty.
+\item[3)] \textbf{Problem 9.18:} I did this one by hand, don't yet know how to do graphs in \LaTeX. It's not pretty.
 \item[4)] Derive the Fresnel coefficients for an incident wave polarized in the $y$ direction, perpendicular to the incident plane.\\ \newline
+This one has a lot of steps. The final answers are Equations (32) and (35) on the next page. \\ \newline
 Since \~{E} is in the $y$ direction, then \~{B} will be in the incident plane $(x,z)$. Therefore there are three boundary conditions to deal with:
 \begin{align}
   (\tilde{E}_{0I}+\tilde{E}_{0R})_{y} & = (\tilde{E}_{0T})_{y}\\
@@ -116,9 +117,48 @@ Since $n=\frac{c}{v}$ we can rewrite that as
 \begin{equation}
   n_1(E_{0I}-E_{0R})\cos{\theta_I}  = n_2 E_{0T}\cos{\theta_t}
 \end{equation}
-
-
-
+Using Equation (24), plug in $  E_{0I}+E_{0R}$ for $E_{0T}$ to get
+\begin{equation}
+  n_1(E_{0I}-E_{0R})\cos{\theta_I}  = n_2 (E_{0I}+E_{0R})\cos{\theta_t}
+\end{equation}
+Which can be rearranged into:
+\begin{equation}
+  \frac{E_{0R}}{E_{0I}} = \frac{n_1\cos{\theta_I}-n_2\cos{\theta_T}}{n_1\cos{\theta_I}+n_2\cos{\theta_T}}
+\end{equation}
+Subbing in $n=\frac{n_2}{n_1}$
+\begin{equation}
+  \frac{E_{0R}}{E_{0I}} = \frac{\cos{\theta_I}-n\cos{\theta_T}}{\cos{\theta_I}+n\cos{\theta_T}}
+\end{equation}
+To get this in terms of $\theta_I$, use the law of reflection, $n_1\sin{\theta_I}=n_2\sin{\theta_T}$ or $\sin{\theta_I}=n\sin{\theta_T}$
+\begin{equation}
+  \cos{\theta_T} = \sqrt{1-\sin{\theta_T}^2} = \sqrt{1-\frac{sin{\theta_I}^2}{n^2}}
+\end{equation}
+Substitute this into Equation (30) to get everything in terms of $n$ and $\theta_I$:
+\begin{equation}
+  \frac{E_{0R}}{E_{0I}} = \frac{\cos{\theta_I}-\sqrt{n^2-sin{\theta_I}^2}}{\cos{\theta_I}+\sqrt{n^2-sin{\theta_I}^2}}
+\end{equation}
+To find $\frac{E_{0T}}{E_{0I}}$, we solve Equation (24) for $E_{0R}$ and plug that into Equation (26) to get:
+\begin{equation}
+  \frac{1}{v_1} (E_{0I}-(E_{0T}-E_{0I}))\cos{\theta_I}  = \frac{1}{v_2} E_{0T}\cos{\theta_t}
+\end{equation}
+Once again substituting $n=\frac{1}{v}$ and rearranging terms, we get:
+\begin{equation}
+  \frac{E_{0T}}{E_{0I}} = \frac{2n_1\cos{\theta_I}}{n_1\cos{\theta_I}+n_2\cos{\theta_T}}
+\end{equation}
+Repeating the sequence of substitutions used to make Equations (30), (31), and (32) gives:
+\begin{equation}
+  \frac{E_{0T}}{E_{0I}} = \frac{2\cos{\theta_I}}{\cos{\theta_I}+\sqrt{n^2-sin{\theta_I}^2}}
+\end{equation}
+Brewster's angle occurs were $\frac{E_{0R}}{E_{0I}} = 0$. This requires the numerator of Equation (32) to be 0.
+\begin{align}
+  \cos{\theta_I}-\sqrt{n^2-sin{\theta_I}^2} & = 0\\
+  \cos{\theta_I} & =\sqrt{n^2-sin{\theta_I}^2}\\
+  \sqrt{1-sin{\theta_I}^2}& = \sqrt{n^2-sin{\theta_I}^2}\\
+1-sin{\theta_I}^2 &=n^2-sin{\theta_I}^2\\
+1&=n^2\\
+n&=1
+\end{align}
+Brewster's Angle can only exist if $n=1$ or $n_1 = n_2$, in which case there is no reflection because there is no boundary. Otherwise, it is impossible.
 
   \end{itemize}
    \end{document}
