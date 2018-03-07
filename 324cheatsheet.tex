@@ -1,0 +1,21 @@
+\documentclass{report}
+\usepackage{bbold}
+\usepackage{amsmath}
+\usepackage[margin=0.5in]{geometry}
+
+\begin{document}
+324 cheat sheet
+Bayes Rule:
+$$ P(A\cap B)P(B) = P(B\cap A)P(A)  \text{ therefore }  P(A\cap B) = \frac{P(B\cap A)P(A)}{P(B)} \text{ and } P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+Law of Total Probability: If $B = \{B_1, ... B_m\}$ is an event space, then
+$$ P(X) = \sum_{i=1}^{m} P(X\cap B_i) \text{ and } P(X) = \sum_{i=1}^{m} P(X|B_i) $$
+
+Expectation and variance:
+$$ E[X] = \sum_{x \epsilon S_x} x \cdot p_X(x) \text{ and } Var(X) = E[(X-E[X])^2] = E[X^2]-E[X]^2 $$
+Conditional Expectation:
+$$ E[X|Y] \text{ and } E[E[X|Y]] = E[X] $$
+De Morgan's Law
+$$ (A\cup B)^c = A^c \cap B^c \text{ and } (A\cap B)^c = A^c \cup B^c $$
+
+
+ \end{document}
