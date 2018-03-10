@@ -4,18 +4,78 @@
 \usepackage[margin=0.5in]{geometry}
 
 \begin{document}
-324 cheat sheet
-Bayes Rule:
+324 formula sheet \\
+\underline{Bayes Rule:}
 $$ P(A\cap B)P(B) = P(B\cap A)P(A)  \text{ therefore }  P(A\cap B) = \frac{P(B\cap A)P(A)}{P(B)} \text{ and } P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
-Law of Total Probability: If $B = \{B_1, ... B_m\}$ is an event space, then
-$$ P(X) = \sum_{i=1}^{m} P(X\cap B_i) \text{ and } P(X) = \sum_{i=1}^{m} P(X|B_i) $$
+$$ p_{X,Y}(x,y) = p_{X|Y}(X|Y)p_Y(y)= p_{Y|X}(y|x)p_X(x) \text{ therefore } p_{X|Y}(X|Y) = p_{Y|X}(y|x)\frac{p_X(x)}{p_Y(y)} $$
+\underline{Laws of Total Probability:} If $B = \{B_1, ... B_m\}$ is an event space, then
+$$ P(X) = \sum_{i=1}^{m} P(X\cap B_i) \text{ and } P(X) = \sum_{i=1}^{m} P(X|B_i) \text{ and } p_X(x) = \sum_{i=1}^{m} p_{X|B_i}(x)P(B_i) \text{ and } p_X(x)=\sum_{y\in S_Y} p_{X|Y}(x|y)p_Y(y) $$
 
-Expectation and variance:
-$$ E[X] = \sum_{x \epsilon S_x} x \cdot p_X(x) \text{ and } Var(X) = E[(X-E[X])^2] = E[X^2]-E[X]^2 $$
-Conditional Expectation:
-$$ E[X|Y] \text{ and } E[E[X|Y]] = E[X] $$
-De Morgan's Law
-$$ (A\cup B)^c = A^c \cap B^c \text{ and } (A\cap B)^c = A^c \cup B^c $$
+\underline{Expectation and variance:}
+$ E[X] = \sum_{x \epsilon S_x} x \cdot p_X(x) \text{ and } Var(X) = E[(X-E[X])^2] = E[X^2]-E[X]^2 $ \\
+$E[aX + b]=aE[X]+b \text{ and } Var(aX+b) = a^2 \cdot Var(X) \text{ if } a,b \in R$ \\
+\underline{Conditional Expectation:}
+$ E[X|B]= \sum_{x \epsilon B}x \cdot p_{X|B}(x) \text{ and } E[E[X|Y]] = E[X] \text{ and } Var(X|B) =  = E[X^2|B]-E[X|B]^2$ \\
+\underline{De Morgan's Law}
+$ (A\cup B)^c = A^c \cap B^c \text{ and } (A\cap B)^c = A^c \cup B^c $ \\
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  RV Type & PMF & Exp & Var \\
+  \hline
+Bernoulli &   $p_X(x) = \left. \begin{cases}
+1-p & x = 0 \\
+p & x = 1 \\
+0 & otherwise
+\end{cases} \right.$ & $p$ & $p(1-p)$ \\
+\hline
+Binomial &   $p_X(x) = \left. \begin{cases}
+\left(\!
+    \begin{array}{c}
+      n \\
+      x
+    \end{array}
+  \!\right)p^x( 1-p)^{n-x} & x = 0,1,...,n \\
+0 & otherwise
+\end{cases} \right.$ & $np$ & $np(1-p)$ \\
+\hline
+Geometric &   $p_X(x) = \left. \begin{cases}
+
+    (1-p)^{x-1}p & x = 0,1,... \\
+0 & otherwise
+\end{cases} \right.$ & $\frac{1}{p}$ & $ \frac{1-p}{p^2} $ \\
+\hline
+Pascal &   $p_X(x) = \left. \begin{cases}
+\left(\!
+    \begin{array}{c}
+      x-1 \\
+      k-1
+    \end{array}
+  \!\right)p^k( 1-p)^{x-k} & x = k,k+1,... \\
+0 & otherwise
+\end{cases} \right.$ & $ \frac{k}{p} $ & $ \frac{k(1-p)}{p^2}$ \\
+\hline
+\end{tabular} \\
+Marginal PMF and independence $$ p_X(x) = \sum_{y\in S_Y} p_{X,Y}(x,y) \text{ and } p_{X,Y}(x,y)= p_X(x) \times p_Y(y)   $$ \\
+\begin{tabular}{|c|c|c|}
+  \hline
+  Correlation & Covariance & Correlation Coefficient \\
+  \hline
+  $\gamma_{X,Y} = E[X \cdot Y] =0 \text{ if Orthogonal}$ & $\sigma_{X,Y}=E[(X-E[X])(Y-E[Y])] = 0 \text{ if uncorrelated}$ & $\rho_{X,Y}= \frac{Cov(X,Y)}{Var(X) \cdot Var(Y)}$ \\
+  \hline
+\end{tabular}\\
+If $W=g(X,Y)$ then $E[W]=\sum_{(x,y)\in S_{X,Y}} g(x,y)p_{X,Y}(x,y)$ and $Var(X+Y) = Var(X)+Var(Y)+2\sigma_{X,Y}$
+ $$E[W]=\sum_{(x,y)\in S_{X,Y}} g(x,y)p_{X,Y}(x,y) \text{ and }E[W|B]=\sum_{(x,y)\in S_{X,Y}} g(x,y)p_{X,Y|B}(x,y) $$
+$$p_{X,Y|B}(x,y) = P(X=x, Y=y|B) = \left. \begin{cases}
+
+    \frac {p_{X,Y}(x,y)}{P(B)} & \text{if }(x,y)\in B \\
+0 & otherwise
+\end{cases} \right. \text{ given } B \subset R^2 $$
+
+
+
+
+
+
 
 
  \end{document}
