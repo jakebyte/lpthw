@@ -2,12 +2,26 @@
 \usepackage{bbold}
 \usepackage{amsmath}
 \usepackage[margin=0.5in]{geometry}
+\usepackage{kpfonts}
 
 \begin{document}
 324 formula sheet \\
-
-
-
+Maxwell's Equations: Everything we need when working in \underline{vacuum}. \\
+\begin{tabular}{l c c  c c} \\
+  & & vacuum & matter & or\\
+1. & Gauss's Law & $ \bigtriangledown \cdot \vec{E} = \frac{1}{\epsilon_0} \rho $  & $ \bigtriangledown \cdot \vec{E} = \frac{1}{\epsilon}(\rho_f - \bigtriangledown \cdot \vec{P}) $ & $\bigtriangledown \cdot \vec{D} =\rho_f \text{ if } \vec{D} \equiv \epsilon_0 \vec{E} + \vec{P} $  \\
+2. & No magnetic monopoles & $ \bigtriangledown \cdot \vec{B} = 0 $  & 1: $ \bigtriangledown \cdot \vec{E} = \frac{\rho_{free}}{\epsilon} $ &\\
+3. & Faraday's Law & $\bigtriangledown \times \vec{E} = - \frac{\partial \vec{B}}{\partial t} $  & 4: $ \bigtriangledown \times \vec{B} = \mu\vec{J}_{free}+\mu\sigma\vec{E} + \mu \epsilon \frac{\partial \vec{E}}{\partial t} $ & \\
+4. & Ampere's Law & $ \bigtriangledown \times \vec{B} = \mu_0 \vec{J} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t} $  & $ \bigtriangledown \times \vec{B} = \mu_0 (\vec{J}_f + \bigtriangledown \times \vec{M} + \frac{\partial \vec{P}}{\partial t} ) + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t} $ & $ \bigtriangledown \times \vec{H} = \vec{J}_f + \frac{\partial \vec{D}}{\partial t} \text{ if } \vec{H} = \frac{1}{\mu_0}\vec{B} - \vec{M}$ \\
+ & Continuity & $ \bigtriangledown \cdot \vec{J} = - \frac{\partial \rho}{\partial t} = - \bigtriangledown \cdot (\epsilon_0 \frac{\partial \vec{E}}{\partial t}) $ & &\\
+\end{tabular}
+\begin{tabular}{c c c c c} \\
+  Boundary Conditions: & $\epsilon_1 E_1 ^{\perp} = \epsilon_2 E_2 ^{\perp}$ &  $ B_1 ^{\perp} =  B_2 ^{\perp}$ &  $ E_1 ^{\parallel} =  E_2 ^{\parallel}$ &$ \frac{1}{\mu_1} B_1 ^{\parallel} = \frac{1}{\mu_2} B_2 ^{\parallel} $ \\
+  Wave Equation: & $ \frac{\partial ^2 f}{\partial z^2} = \frac{1}{v^2}\frac{\partial ^2 f}{\partial t^2} $ & Standing Wave to & sum of waves: & $ A\sin{kz}\cos{kvt} = \frac{A}{2}(\sin{kz + kvt}+\sin{kz - kvt}) $ \\
+  Standing Wave: & $kL = n\pi \text{ for }$ & $n = 1,2,3...$ & And frequency: & $V = \frac{1}{T} = \frac{kv}{2\pi} = \frac{nv}{nL}$ \\
+\end{tabular}
+String boundary conditions: Position cannot change across boundary, and neither can first derivative. \\
+2 connected strings, $\omega_1 = \omega_2$ must be, $ v = \frac{\omega}{k}$, then $r = \frac{A_R}{A_I} = \frac{k_1-k_2}{k_1+k_2} = \frac{v_2-v_1}{v_1+v_2}$ and $ t = \frac{A_T}{A_I} = \frac{2k_1}{k_1+k_2} = \frac{2v_2}{v_1+v_2}$ \\
 
 
 
