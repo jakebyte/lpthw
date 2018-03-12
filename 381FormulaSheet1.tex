@@ -16,16 +16,25 @@ Maxwell's Equations: Everything we need when working in \underline{vacuum}. \\
 0. Continuity & $ \bigtriangledown \cdot \vec{J} = - \frac{\partial \rho}{\partial t} = - \bigtriangledown \cdot (\epsilon_0 \frac{\partial \vec{E}}{\partial t}) $ &Vac, no charges or currents:  $\bigtriangledown^2 \vec{E}  $ & $=\mu_0 \epsilon_0 \frac{\partial ^2 \vec{E}}{\partial t^2}$ and $\bigtriangledown^2 \vec{B} = \mu_0 \epsilon_0 \frac{\partial ^2 \vec{B}}{\partial t^2}$    \\
 \hline
 \end{tabular} \\
-\begin{tabular}{c c c c c}
-  Boundary Conditions: & $\epsilon_1 E_1 ^{\perp} = \epsilon_2 E_2 ^{\perp}$ &  $ B_1 ^{\perp} =  B_2 ^{\perp}$ &  $ E_1 ^{\parallel} =  E_2 ^{\parallel}$ &$ \frac{1}{\mu_1} B_1 ^{\parallel} = \frac{1}{\mu_2} B_2 ^{\parallel} $ \\
-  Wave Equation: & $ \frac{\partial ^2 f}{\partial z^2} = \frac{1}{v^2}\frac{\partial ^2 f}{\partial t^2} $ & Standing Wave to & sum of waves: & $ A\sin{kz}\cos{kvt} = \frac{A}{2}(\sin{kz + kvt}+\sin{kz - kvt}) $ \\
-  Standing Wave: & $kL = n\pi \text{ for }$ & $n = 1,2,3...$ & And frequency: & $V = \frac{1}{T} = \frac{kv}{2\pi} = \frac{nv}{nL}$ \\
+\begin{tabular}{c c  c c}
+  Boundary Conditions: & $\epsilon_1 E_1 ^{\perp} = \epsilon_2 E_2 ^{\perp}$ &  $ B_1 ^{\perp} =  B_2 ^{\perp}$,   $ E_1 ^{\parallel} =  E_2 ^{\parallel}$, $ \frac{1}{\mu_1} B_1 ^{\parallel} = \frac{1}{\mu_2} B_2 ^{\parallel} $& $\beta = \frac{\mu_1v_1}{\mu_2v_2},E_{0R}= \frac{1-\beta}{1+\beta}E_{0I} \text{ and } E_{0T}= \frac{2}{1+\beta}E_{0I}$ \\
+  Wave Equation: & $ \frac{\partial ^2 f}{\partial z^2} = \frac{1}{v^2}\frac{\partial ^2 f}{\partial t^2} $ & Standing Wave to sum of waves: & $ A\sin{kz}\cos{kvt} = \frac{A}{2}(\sin{kz + kvt}+\sin{kz - kvt}) $ \\
+  Standing Wave: & $kL = n\pi \text{ for }$ & $n = 1,2,3...$ And frequency: & $\nu = \frac{1}{T} = \frac{kv}{2\pi} = \frac{nv}{nL}$ \\
   \hline
 \end{tabular}
 String boundary conditions: Position cannot change across boundary, and neither can first derivative. \\
 2 connected strings, $\omega_1 = \omega_2$ must be, $ v = \frac{\omega}{k}$, then $r = \frac{A_R}{A_I} = \frac{k_1-k_2}{k_1+k_2} = \frac{v_2-v_1}{v_1+v_2}$ and $ t = \frac{A_T}{A_I} = \frac{2k_1}{k_1+k_2} = \frac{2v_2}{v_1+v_2}$ \\
-Monochromatic plane waves: $\vec{E} = E_0 \hat{n} e^{i(\vec{k}\cdot\vec{r}-\omega t)} \text{ and } \vec{B} = \frac{E_0}{c} \hat{k} \times \hat{n} e^{i(\vec{k}\cdot\vec{r}-\omega t)} $
-
+Monochromatic plane waves: $\vec{E} = E_0 \hat{n} e^{i(\vec{k}\cdot\vec{r}-\omega t)} \text{ and } \vec{B} = \frac{E_0}{c} \hat{k} \times \hat{n} e^{i(\vec{k}\cdot\vec{r}-\omega t)} \text{ and } \vec{S} = c\epsilon_0 E_0^2 \cos^2 (kz-\omega t + \delta) \hat{z} = cu\hat{z}$ \\
+\underline{Poynting Vector:} $ \vec{S} \equiv \frac{1}{\mu_0}(\vec{E} \times \vec{B})$  Poynting Theorem: $ \frac{dW}{dt} = -\frac{d}{dt}\int_{\nu}ud\tau - \oint_S \vec{S}\cdot d\vec{a}$  Momentum: $\vec{g} = \frac{1}{c^2}\vec{S}$\\
+Averages: $\left \langle u\right \rangle = \frac{1}{2}\epsilon_0 E_0^2 \text{, } \left \langle \vec{S}\right \rangle = \frac{1}{2}c\epsilon_0 E_0^2  \hat{z}  \text{, }  \left \langle \vec{g}\right \rangle = \frac{1}{2c}\epsilon_0 E_0^2  \hat{z}  \text{, Intensity } I\equiv \left \langle S\right \rangle = \frac{1}{2}c\epsilon_0 E_0^2   $ \\
+Intensity stuff: $I_I = \frac{\epsilon_1 v_1}{2}|E_{0I}|^2, I_R = \frac{\epsilon_1 v_1}{2}|E_{0R}|^2, I_T = \frac{\epsilon_2 v_2}{2}|E_{0T}|^2, \text{ then } R = \frac{I_R}{I_I} = (\frac{1-\beta}{1+\beta})^2, T = \frac{I_T}{I_I} = \frac{\epsilon_2v_2}{\epsilon_1v_1}(\frac{2}{1+\beta})^2 \text{ and } R+T = 1 $ \\
+Related: $, c =\frac{1}{\sqrt{\mu_0 \epsilon_0}}, v1 = \frac{1}{\sqrt{\mu_1 \epsilon_1}}$ Brewster's Angle when $\frac{E_{0R}}{E_{0I}} = 0$ And for the following, $n = \frac{n_2}{n_1} \text{ or } \frac{n_T}{n_I} $ \\
+Fresnel Coeff, S-polarized, $\hat{n}=\hat{y}$: $ r_\perp =\frac{E_{0R}}{E_{0I}} = \frac{n_I\cos{\theta_I}-n_T\cos{\theta_T}}{n_I\cos{\theta_I}+n_T\cos{\theta_T}} = \frac{\cos{\theta_I}-\sqrt{n^2-sin{\theta_I}^2}}{\cos{\theta_I}+\sqrt{n^2-sin{\theta_I}^2}} \text{, } t_\perp = \frac{E_{0T}}{E_{0I}} = \frac{2\cos{\theta_I}}{\cos{\theta_I}+\sqrt{n^2-sin{\theta_I}^2}}= \frac{2n_I\cos{\theta_I}}{n_I\cos{\theta_I}+n_T\cos{\theta_T}}$ \\
+P-polarized, $\hat{n} \in \hat{x}+\hat{z}: r_\parallel =\frac{E_{0R}}{E_{0I}} = \frac{n_I\cos{\theta_T}-n_T\cos{\theta_I}}{n_I\cos{\theta_T}+n_T\cos{\theta_I}} =  \frac{\sqrt{n^2-sin{\theta_I}^2}-n^2\cos{\theta_I}}{\sqrt{n^2-sin{\theta_I}^2}+n^2\cos{\theta_I}} \text{, }$
+$t_\parallel = \frac{E_{0T}}{E_{0I}} = \frac{2n\cos{\theta_I}}{n^2\cos{\theta_I}+\sqrt{n^2-sin{\theta_I}^2}}= \frac{2n_I\cos{\theta_I}}{n_I\cos{\theta_T}+n_T\cos{\theta_I}}$ \\
+\underline{Conductors:} Conductivity $\sigma$. $e^{i(\beta z-\omega t)}, \beta = k_r +ik_i = \sqrt{\mu \epsilon \omega^2 + i\mu\sigma\epsilon} = \omega\sqrt{\frac{\epsilon\mu}{2}}\left(\sqrt{1+(\frac{\sigma}{\epsilon\mu})^2}+1\right)^{\frac{1}{2}} + i\omega\sqrt{\frac{\epsilon\mu}{2}}\left(\sqrt{1+(\frac{\sigma}{\epsilon\mu})^2}-1\right)^{\frac{1}{2}}$ \\
+Skin Depth $d = \frac{1}{k_i}$ Boundary Conditions: $\epsilon_1 E_1 ^{\perp} - \epsilon_2 E_2 ^{\perp} = \rho_s $,  $ B_1 ^{\perp} -  B_2 ^{\perp}=0$,   $ E_1 ^{\parallel} - E_2 ^{\parallel}=0$, $ \frac{1}{\mu_1} B_1 ^{\parallel} - \frac{1}{\mu_2} B_2 ^{\parallel} = \vec{J}_s \times \hat{n}$ \\
+coeffecients don't change: $\frac{E_0R}{E_0I} = \frac{1-\beta}{1+\beta}, \frac{E_0t}{E_0I} = \frac{2}{1+\beta}$ Difference is $\beta$ is complex, $\beta = \frac{\mu_1 v_1}{\mu_2 \omega}k_2$
 
 
 
