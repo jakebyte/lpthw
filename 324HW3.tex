@@ -1,0 +1,57 @@
+\documentclass{report}
+\usepackage{bbold}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+ENEE 324 HW \#3 \\
+Jacob Besteman-Street \\
+\today \\
+\begin{enumerate}
+\item Suppose that $X$ is a discrete random variable (rv) with range $ S_X \subset N := \{1,2,3, ... \}$. Prove
+$$ E[X] = \sum_{i \in N} P[X \geq i]$$
+
+\item Suppose that $X$ and $Y$ are two discrete rvs, and $ S_X = S_Y = \{1,-1\}$
+
+\item Let $X$ and $Y$ be two discrete rv with joint PMF
+$$ p_{X,Y}(x,y) = \left. \begin{cases}
+0.1 & x = 1, 2, \cdots , 10, y = 1, 2, \cdots , 10, \\
+0 & otherwise
+\end{cases} \right.$$
+\begin{itemize}
+\item[(a)] What is the PMF of $W = min(X,Y)$? \\
+There are 100 possible combinations for $x = 1, 2, \cdots , 10, y = 1, 2, \cdots , 10$. Only one has a minimum value of 10. Nineteen have a minimum value of 1. And so on in between.
+$$ p_W(w) = \left. \begin{cases}
+0.19 & w = 1 \\
+0.17 & w = 2 \\
+0.15 & w = 3 \\
+0.13 & w = 4 \\
+0.11 & w = 5 \\
+0.9 & w = 6 \\
+0.7 & w = 7 \\
+0.5 & w = 8 \\
+0.3 & w = 9 \\
+0.1 & w = 10 \\
+0 & otherwise
+\end{cases} \right.$$
+\item[(b)] What is the PMF of $Z = max(X,Y)$?\\
+Same result as W, but with the order reversed.
+$$ p_Z(z) = \left. \begin{cases}
+0.19 & z = 10 \\
+0.17 & z = 9 \\
+0.15 & z = 8 \\
+0.13 & z = 7 \\
+0.11 & z = 6 \\
+0.9 & z = 5 \\
+0.7 & z = 4 \\
+0.5 & z = 3 \\
+0.3 & z = 2 \\
+0.1 & z = 1 \\
+0 & otherwise
+\end{cases} \right.$$
+\end{itemize}
+
+
+\end{enumerate}
+
+ \end{document}
