@@ -10,8 +10,40 @@ Jacob Besteman-Street \\
 \begin{enumerate}
 \item Suppose that $X$ is a discrete random variable (rv) with range $ S_X \subset N := \{1,2,3, ... \}$. Prove
 $$ E[X] = \sum_{i \in N} P[X \geq i]$$
-
+Starting with the definition of $E[X]$:
+$$ E[X] = \sum_{x \in S_x} x \cdot p_X(x) $$
+To get here, we rewrite $\sum_{i \in N} P[X \geq i]$
+$$ \sum_{i \in N}P[X \geq i] = \sum_{i \in N} \sum_{x \geq i}p_X(x)   $$
+From the definition of $N$,
+$$\sum_{i \in N} \sum_{x \geq i}p_X(x) = \sum_{i = 1}^{\infty}\sum_{x \geq i}p_X(x)$$
+Logically, this means that for each value of $x = i$, $p_X(x)$ will be added $i$ times. For example, $p_X(1)$ will only be included in the first summation. $p_X(2)$ will be added in the first and second. And thus this simplifies to the definition of the expectation. \\
+Mathematically, it needs a few more steps:
+$$\sum_{i = 1}^{\infty}\sum_{x \geq i}p_X(x) = \sum_{x = 1}^{\infty}\sum_{i =1}^{x}p_X(x) = \sum_{x = 1}^{\infty}p_X(x)\sum_{i =1}^{x}1 = \sum_{x = 1}^{\infty}p_X(x) \cdot x $$
+Based on the definition $ S_X \subset N := \{1,2,3, ... \}$,
+$$ \sum_{x = 1}^{\infty}p_X(x) \cdot x = \sum_{x \in S_x} x \cdot p_X(x) = E[X]$$
 \item Suppose that $X$ and $Y$ are two discrete rvs, and $ S_X = S_Y = \{1,-1\}$
+\begin{itemize}
+\item[(a)] Suppose that $E[X] = E[Y] = 0$. Show that $p_{X,Y}(1,1) = p_{X,Y}(-1,-1)$ and $p_{X,Y}(1,-1) = p_{X,Y}(-1,1)$.
+Since each rv has only two possible values, 1 and -1, each must have equal probabiltiy 0.5 in order for the expectation to be 0. If $X$ and $Y$ were independent, then this would be simple: $p_{X,Y}(1,1) = p_{X,Y}(-1,-1) = p_{X,Y}(1,-1) = p_{X,Y}(-1,1) = 0.25$ \\
+However, even if they aren't independent, their conditional probabilities must be symmetric in order to give an expectation of 0. In other words:
+$$p_Y(1) = p_{Y|X}(1|1)+p_{Y|X}(1|-1) = 0.5 \text{ and } p_Y(-1) = p_{Y|X}(-1|1)+p_{Y|X}(-1|-1) = 0.5$$
+Since the expecation is 0, if $p_{Y|X}(1|1) > p_{Y|X}(1|-1)$ (Y is more likely to be 1 if X is 1 than if it is -1), then $p_{Y|X}(-1|1)<p_{Y|X}(-1|-1)$ is necessary to ensure that the total $p_Y(1) = p_Y(-1) = 0.5$. More specifically, if $p_{Y|X}(1|1) \neq p_{Y|X}(1|-1)$, then $$p_{Y|X}(1|1) - p_{Y|X}(1|-1) = p_{Y|X}(-1|-1)-p_{Y|X}(-1|1)$$
+Rearranging the earlier equations to solve for $p_{Y|X}(1|1),p_{Y|X}(1|-1),p_{Y|X}(-1|1),\text{ and }p_{Y|X}(-1|-1)$, then subsituting into the equality above and simplifying yeilds:
+$$p_{Y|X}(1|1)  = p_{Y|X}(-1|-1) \text{ and } p_{Y|X}(1|-1) =p_{Y|X}(-1|1)$$
+Each side of the above equations can be multiplied by $p_X(1) = 0.5$ or $p_X(-1) = 0.5$ to turn the conditional probability into the desired joint probability, proving that $p_{X,Y}(1,1) = p_{X,Y}(-1,-1)$ and $p_{X,Y}(1,-1) = p_{X,Y}(-1,1)$.
+\item[(b)] Assume $E[X] = E[Y] = 0$. Let $p=2p_{X,Y}(1,1)$. Find $Var(X)$ and $Var(Y)$. Write $Cov(X,Y)$ in terms of $p$.\\
+$$Var(X) =  E[X^2]-E[X]^2 = 1-0 = 1 \text{ and }Var(Y) =  E[Y^2]-E[Y]^2 = 1-0 = 1$$
+$$Cov(X,Y) = \sigma_{X,Y}=E[(X-E[X])(Y-E[Y])] = E[X \cdot Y]$$
+$$ E[X \cdot Y]= \sum x\cdot y \cdot p_{X,Y}(x,y) = p_{X,Y}(1,1)-p_{X,Y}(1,-1)-p_{X,Y}(-1,1)+p_{X,Y}(-1,-1)$$
+Since we showed that $p_{X,Y}(1,1) = p_{X,Y}(-1,-1)$ and $p_{X,Y}(1,-1) = p_{X,Y}(-1,1)$ above, this can be simplified.
+$$p_{X,Y}(1,1)-p_{X,Y}(1,-1)-p_{X,Y}(-1,1)+p_{X,Y}(-1,-1) = 2 p_{X,Y}(1,1) - 2 p_{X,Y}(1,-1)$$
+In addition,
+$$ p_{X,Y}(1,1)+p_{X,Y}(1,-1)+p_{X,Y}(-1,1)+p_{X,Y}(-1,-1) = 1 = 2 p_{X,Y}(1,1) + 2 p_{X,Y}(1,-1)$$
+$$2 p_{X,Y}(1,-1) = 1-2 p_{X,Y}(1,1)$$
+Substituting this into $\sigma_{X,Y}$ and replacing $2 p_{X,Y}(1,1)$ with $p$ gives:
+$$Cov(X,Y) = \sigma_{X,Y}= 2 p_{X,Y}(1,1)-(1-2 p_{X,Y}(1,1)) p-(1-p)= 2p-1$$
+\end{itemize}
+
 
 \item Let $X$ and $Y$ be two discrete rv with joint PMF
 $$ p_{X,Y}(x,y) = \left. \begin{cases}
@@ -50,7 +82,18 @@ $$ p_Z(z) = \left. \begin{cases}
 0 & otherwise
 \end{cases} \right.$$
 \end{itemize}
-
+\item Tom and Mary want to have 2 girls together. Each time they have a baby, it is a girl with a probability
+of 0.6. They stop having any more babies when they have two girls. Let $N_1$ be the number of boys
+till the first girl and $N_T$ the total number of children they have together.
+\begin{itemize}
+  \item[(a)] Let $B=$ \{third baby is a boy\}. What is the conditional joint PMF $p_{N_1, N_T|B}(n_1,n_T)$?\\
+This limits the available values for $N_1$ and $N_T$. Because the third child is a boy, $N_1 \neq 2$ and $N_T > 3$. This sets the minimum for $N_1$ and reduces the possible permutations for where the first girl was born.\\
+$$p_{N_1, N_T|B}(n_1,n_T) = \left. \begin{cases}
+(0.316)(0.4)^{n_T - 4}(0.6) & n_1 = 0,1,  n_T \geq 4  \text{ (One of the 1st two children is a girl)} \\
+(0.4)^{n_T - 3}(0.6)^2 & n_1 \geq 3,  n_T \geq n_1 + 2  \text{ (Neither of the 1st two children is a girl)} \\
+0 & otherwise
+\end{cases} \right.$$
+\end{itemize}
 
 \end{enumerate}
 
