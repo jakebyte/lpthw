@@ -177,8 +177,8 @@ $$E[R] = 25p_X(1) + 30p_X(2) + 50p_X(3)  $$
 For this, we need the Bayes Rule: $p_{X|R}(x|r) = p_{R|X}(r|x)\frac{p_X(x)}{p_R(r)}$. Thus,$p_{X|R}(1|100) = p_{R|X}(100|1)\frac{p_X(1)}{p_R(100)}$, $p_{X|R}(2|100) = p_{R|X}(100|2)\frac{p_X(2)}{p_R(100)}$ and $p_{X|R}(3|100) = p_{R|X}(100|3)\frac{p_X(3)}{p_R(100)}$.
 The first of these is clearly 0 because $R$ cannot be 100 if $X$ is 1. Start by calculating the conditional probabilities for $R$:
 $$p_{R|X}(100|3) = 0.5^{100} = 7.89 \cdot 10^{-31} \text{ This is essentially 0}$$
-$$p_{R|X}(100|2) = (\frac{29}{30})^{99}\frac{1/30} = 0.00116$$
- $p_{R|X}(100|2$ is small, but greater than 0 and more than $10^{27}$ times larger than $p_{X|R}(3|100)$. Therefore, we can ignore the rest of the Bayes Rule calculation and conclude that if $R=100$, then $X=2$.
+$$p_{R|X}(100|2) = (\frac{29}{30})^{99}\frac{1}{30} = 0.00116$$
+ $p_{R|X}(100|2)$ is small, but greater than 0 and more than $10^{27}$ times larger than $p_{R|X}(100|3)$. Therefore, we can ignore the rest of the Bayes Rule calculation and conclude that if $R=100$, then $X=2$.
  $$p_{X|R}(x|100) = \left. \begin{cases}
  1 & x=2 \\
  0 & Otherwise
