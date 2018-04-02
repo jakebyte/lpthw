@@ -28,7 +28,7 @@ $$ F_Y(y) = \left. \begin{cases}
   \frac{3}{8}(y-1)^2 & if 1 \leq y < 3 \\
   0 & if y \geq 3
   \end{cases} \right.$$
-Sketch using Matlab:
+I could sketch this by hand, but it looks better this way. Using Matlab:
 \begin{verbatim}
 syms y(x);
 y(x) = piecewise(x<1, 0, 1<x<3, (3/8)*(x-1)^2, x>3, 0);
